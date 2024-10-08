@@ -5,7 +5,32 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor :{
+       'car-gray1' : '#f2f2f2',
+       'car-red1' : '#d81324'
+      },
+      colors:{
+        'car-red1' : '#d81324',
+        'car-gray1' : '#5e6477',
+        'car-blue1' : '#0b2a68',
+        'car-blue2' : '#0B2154'
+
+      },
+      screens: {
+        screens: {
+          sm: "490px",
+
+          md: "768px",
+
+          smd: "999px",
+
+          lg: "1024px",
+
+          xl: "1280px",
+        },
+      }
+    },
   },
   plugins: [],
 }
