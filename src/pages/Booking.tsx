@@ -1,9 +1,9 @@
-import React from 'react'
+import Navbar from '../components/Navbar'
 
 function Booking() {
   return (
     <div>
-      Booking page
+      Booking page<Navbar />
     </div>
   )
 }
