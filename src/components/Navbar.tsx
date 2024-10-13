@@ -1,23 +1,16 @@
-import {
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-  Disclosure,
-  Transition,
-} from "@headlessui/react";
-import {
-  ChevronDownIcon,
-  Bars3Icon,
-  XMarkIcon,
-} from "@heroicons/react/20/solid";
-import { Link, NavLink } from "react-router-dom";
-import { Fragment } from "react";
+import {Menu,MenuButton,MenuItem,MenuItems,Disclosure,Transition,} from "@headlessui/react";
+import {ChevronDownIcon,Bars3Icon, XMarkIcon,} from "@heroicons/react/20/solid";
 import { MdConnectWithoutContact, MdHome } from "react-icons/md";
-import { FaCar } from "react-icons/fa";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { GrServices } from "react-icons/gr";
+import { FaCar } from "react-icons/fa";
+import { path } from "../types/Types";
+import { Fragment } from "react";
 
 function Navbar() {
+  // get path for dropdown styles
+  const path : path = useLocation().pathname
+
   return (
     <>
       <Disclosure
@@ -65,7 +58,7 @@ function Navbar() {
                               <MenuItem>
                                 <Link
                                   to="/about"
-                                  className="block px-4 py-2 text-sm data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+                                  className={`${path == '/about'? "block px-4 py-2 text-sm data-[focus]:bg-gray-100 data-[focus]:text-gray-900 text-car-red1" : "block px-4 py-2 text-sm data-[focus]:bg-gray-100 data-[focus]:text-gray-900"}`}
                                 >
                                   About us
                                 </Link>
@@ -73,7 +66,7 @@ function Navbar() {
                               <MenuItem>
                                 <Link
                                   to="/support"
-                                  className="block px-4 py-2 text-sm  data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+                                  className={`${path == '/support'? "block px-4 py-2 text-sm data-[focus]:bg-gray-100 data-[focus]:text-gray-900 text-car-red1" : "block px-4 py-2 text-sm data-[focus]:bg-gray-100 data-[focus]:text-gray-900"}`}
                                 >
                                   Support
                                 </Link>
@@ -81,14 +74,14 @@ function Navbar() {
                               <MenuItem>
                                 <Link
                                   to="/bookink"
-                                  className="block px-4 py-2 text-sm  data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+                                  className={`${path == '/bookink'? "block px-4 py-2 text-sm data-[focus]:bg-gray-100 data-[focus]:text-gray-900 text-car-red1" : "block px-4 py-2 text-sm data-[focus]:bg-gray-100 data-[focus]:text-gray-900"}`}
                                 >
                                   Bookink
                                 </Link>
                               </MenuItem>
                               <Link
                                 to="/testimonial"
-                                className="block px-4 py-2 text-sm  data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+                                className={`${path == '/testimonial'? "block px-4 py-2 text-sm data-[focus]:bg-gray-100 data-[focus]:text-gray-900 text-car-red1" : "block px-4 py-2 text-sm data-[focus]:bg-gray-100 data-[focus]:text-gray-900"}`}
                               >
                                 Testimonial
                               </Link>
@@ -165,60 +158,56 @@ function Navbar() {
                   <MdConnectWithoutContact />
                 </NavLink>
                 <div className="dropdown-container ">
-                  <Menu as="div" className="text-left ">
-                    <div>
-                      <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-                        Pages
-                        <ChevronDownIcon
-                          aria-hidden="true"
-                          className="-mr-1 h-5 w-5 text-gray-400"
-                        />
-                      </MenuButton>
-                    </div>
+                        <Menu as="div" className="text-left ">
+                          <div>
+                            <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md  px-3 py-2 text-sm text-white shadow-sm bg-car-red1 transition-all hover:text-car-red1 hover:bg-white">
+                              Pages
+                              <ChevronDownIcon
+                                aria-hidden="true"
+                                className="-mr-1 h-5 w-5"
+                              />
+                            </MenuButton>
+                          </div>
 
-                    <MenuItems
-                      transition
-                      className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
-                    >
-                      <div className="py-1">
-                        <MenuItem>
-                          <a
-                            href="#"
-                            className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+                          <MenuItems
+                            transition
+                            className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
                           >
-                            Account settings
-                          </a>
-                        </MenuItem>
-                        <MenuItem>
-                          <a
-                            href="#"
-                            className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
-                          >
-                            Support
-                          </a>
-                        </MenuItem>
-                        <MenuItem>
-                          <a
-                            href="#"
-                            className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
-                          >
-                            License
-                          </a>
-                        </MenuItem>
-                        <form action="#" method="POST">
-                          <MenuItem>
-                            <button
-                              type="submit"
-                              className="block w-full px-4 py-2 text-left text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
-                            >
-                              Sign out
-                            </button>
-                          </MenuItem>
-                        </form>
+                            <div className="py-1">
+                              <MenuItem>
+                                <Link
+                                  to="/about"
+                                  className={`${path == '/about'? "block px-4 py-2 text-sm data-[focus]:bg-gray-100 data-[focus]:text-gray-900 text-car-red1" : "block px-4 py-2 text-sm data-[focus]:bg-gray-100 data-[focus]:text-gray-900"}`}
+                                >
+                                  About us
+                                </Link>
+                              </MenuItem>
+                              <MenuItem>
+                                <Link
+                                  to="/support"
+                                  className={`${path == '/support'? "block px-4 py-2 text-sm data-[focus]:bg-gray-100 data-[focus]:text-gray-900 text-car-red1" : "block px-4 py-2 text-sm data-[focus]:bg-gray-100 data-[focus]:text-gray-900"}`}
+                                >
+                                  Support
+                                </Link>
+                              </MenuItem>
+                              <MenuItem>
+                                <Link
+                                  to="/bookink"
+                                  className={`${path == '/bookink'? "block px-4 py-2 text-sm data-[focus]:bg-gray-100 data-[focus]:text-gray-900 text-car-red1" : "block px-4 py-2 text-sm data-[focus]:bg-gray-100 data-[focus]:text-gray-900"}`}
+                                >
+                                  Bookink
+                                </Link>
+                              </MenuItem>
+                              <Link
+                                to="/testimonial"
+                                className={`${path == '/testimonial'? "block px-4 py-2 text-sm data-[focus]:bg-gray-100 data-[focus]:text-gray-900 text-car-red1" : "block px-4 py-2 text-sm data-[focus]:bg-gray-100 data-[focus]:text-gray-900"}`}
+                              >
+                                Testimonial
+                              </Link>
+                            </div>
+                          </MenuItems>
+                        </Menu>
                       </div>
-                    </MenuItems>
-                  </Menu>
-                </div>
               </div>
             </Disclosure.Panel>
           </>
