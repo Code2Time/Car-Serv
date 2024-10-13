@@ -28,8 +28,8 @@ function Navbar() {
       >
         {({ open }) => (
           <>
-            <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-              <div className="relative flex h-16 items-center justify-between">
+            <div className="mx-auto max-w-full px-2 sm:px-6 lg:px-8 md:text-2xl">
+              <div className="relative flex h-20 items-center justify-between">
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                   {/* Mobile menu button*/}
                   <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-transparent hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -48,11 +48,11 @@ function Navbar() {
                       <div className="dropdown-container ">
                         <Menu as="div" className="text-left ">
                           <div>
-                            <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-0  hover:bg-gray-50">
+                            <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md  px-3 py-2 text-sm text-white shadow-sm bg-car-red1 transition-all hover:text-car-red1 hover:bg-white">
                               Pages
                               <ChevronDownIcon
                                 aria-hidden="true"
-                                className="-mr-1 h-5 w-5 text-gray-400"
+                                className="-mr-1 h-5 w-5"
                               />
                             </MenuButton>
                           </div>
@@ -64,7 +64,7 @@ function Navbar() {
                             <div className="py-1">
                               <MenuItem>
                                 <Link
-                                  to="about"
+                                  to="/about"
                                   className="block px-4 py-2 text-sm data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
                                 >
                                   About us
@@ -123,7 +123,7 @@ function Navbar() {
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                   {/* Profile dropdown */}
                   <Menu as="div" className="relative ml-3">
-                    <div className="flex flex-row-reverse justify-center items-center gap-3 text-car-red1 cursor-pointer">
+                    <div className="flex flex-row-reverse justify-center items-center gap-3 text-car-red1 cursor-pointer logo">
                       <FaCar size={22} />
                       <h1 className="playwrite3">Car Serv </h1>
                     </div>
