@@ -38,4 +38,37 @@ body{
     .logo:hover{
         filter: drop-shadow(0 0 3px red);
     }
+    .slider-container{
+        .swiper {
+            width: 100%;
+            height: 100%;
+          }
+          
+          .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            width: 100%;
+            height: 100%;
+            filter: blur(3px);
+           
+          
+            /* Center slide text vertically */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          
+         
+          .first-slider-item{
+           background: url('https://www.free-css.com/assets/files/free-css-templates/preview/page291/carserv/assets/img/carousel-bg-1.jpg');
+           background-size: cover;
+           background-attachment: fixed;
+           background-position: center;
+           background-repeat: no-repeat;
+           background-color: rgba(0, 0, 0, 0.095);
+           background-blend-mode: hue;
+          
+          }
+          
+    } 
 }
