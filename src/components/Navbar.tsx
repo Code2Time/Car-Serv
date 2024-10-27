@@ -3,7 +3,7 @@ import {ChevronDownIcon,Bars3Icon, XMarkIcon,} from "@heroicons/react/20/solid";
 import { MdConnectWithoutContact, MdHome } from "react-icons/md";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { GrServices } from "react-icons/gr";
-import { FaCar } from "react-icons/fa";
+import logo from "../assets/img/logo.png";
 import { path } from "../types/Types";
 import { Fragment } from "react";
 
@@ -117,8 +117,7 @@ function Navbar() {
                   {/* Profile dropdown */}
                   <Menu as="div" className="relative ml-3">
                     <div className="flex flex-row-reverse justify-center items-center gap-3 text-car-red1 cursor-pointer logo">
-                      <FaCar size={22} />
-                      <h1 className="playwrite3">Car Serv </h1>
+                      <img src={logo} alt="car-serv-logo" className="size-14 md:size-20 transition-all hover:-translate-y-1" />
                     </div>
                     <Transition
                       as={Fragment}
