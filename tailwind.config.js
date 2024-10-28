@@ -8,7 +8,8 @@ export default {
     extend: {
       backgroundColor :{
        'car-gray1' : '#f2f2f2',
-       'car-red1' : '#d81324'
+       'car-red1' : '#d81324',
+       'car-red2' : '#ad0f1d'
       },
       colors:{
         'car-red1' : '#d81324',
