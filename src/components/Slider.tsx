@@ -21,7 +21,7 @@ function FirstSlider() {
             <div className="first-slider-item size-full">
               <div className="slider-rof size-full ">
                <div className="size-full flex justify-around items-center flex-row  ">
-                <div className="text-white font-bold flex flex-col gap-4 sm:gap-9  justify-center items-start">
+                <div className="text-white font-bold flex flex-col gap-4 sm:gap-9  justify-center items-start" >
                   <h4 className="capitalize">// car servicing //</h4>
                   <h1 className="w-10/12 text-2xl sm:text-3xl lg:text-5xl font-extrabold text-justify">Qualified Car Repair Service Center</h1>
                   <Link to='/' className="capitalize bg-car-red1 transition-all hover:bg-car-red2 px-6 py-3">
